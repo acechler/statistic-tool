@@ -20,8 +20,37 @@ document.getElementById('calculateProduct').addEventListener('click', async () =
     document.getElementById('productResult').innerText = `Product: ${result.product}`;
 });
 
+
+///TODO: Figure out how to extract the data from `items`
 function updateProbabilityBag(items) {
-    document.getElementById('probabilityBag').innerText = JSON.stringify(items, null, 2);
+    
+    const tbody = document.getElementById('statusSetTBody');
+    const newTR = document.createElement('tr');
+    
+    const bag = document.getElementById('probabilityBag');
+    bag.innerText = JSON.stringify(items, null, 2);
+    const parsedItems = JSON.parse(bag.innerText);
+    
+    parsedItems.forEach(item => {
+        const newTH = document.createElement('th');
+        const newTD = document.createElement('td');
+        newTH.setAttribute("scope","row");
+        
+        newTH.innerHTML = `${item.name}`;
+        newTD.innerHTML = `${item.value}`;
+
+        newTR.appendChild(newTH);
+        newTR.appendChild(newTD);
+    });
+
+    tbody.appendChild(newTR);
+    
+    /*             
+    <tr>
+        <th scope="row"></th>
+        <td id="name">0</td>
+    </tr> 
+    */
 }
 
 // Fetch and display the initial probability bag

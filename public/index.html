@@ -18,13 +18,38 @@
         <label for="entryName">Entry Name:</label>
         <input type="text" id="entryName" name="entryName" required>
         <label for="entryValue">Entry Value:</label>
-        <input type="number" id="entryValue" name="entryValue" required step="any">
+        <input type="number" id="entryValue" name="entryValue" required step="any" max="1">
         <button type="submit">Add Entry</button>
     </form>
 
 
     <h2>Probability Bag</h2>
     <pre id="probabilityBag"></pre>
+
+
+    <section class="stats-section">
+        <h2>Statistics</h2>
+        <table class="status-set">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Probability</th>
+            </tr>
+          </thead>
+          <tbody id="statusSetTBody">
+            <tr>
+              <th scope="row">event</th>
+              <td id="name">0</td>
+            </tr>
+            <tr>
+              <th scope="row">event</th>
+              <td id="probability">0</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </section>
+
 
     <h2>Product</h2>
     <button id="calculateProduct">Calculate Product</button>
