@@ -18,12 +18,6 @@ const probability_bag = {
 
 };
 
-let chance_on_counter = 1/2;
-let chance_on_rolling_6 = 1/6;
 
-probability_bag.addEntry("chance of dice being on counter", chance_on_counter);
-probability_bag.addEntry("chance of rolling six sided dice", chance_on_rolling_6);
+module.exports = probability_bag;
 
-console.log(probability_bag);
-
-console.log(probability_bag.calc());
