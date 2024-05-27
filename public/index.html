@@ -18,8 +18,12 @@
         <label for="entryName">Entry Name:</label>
         <input type="text" id="entryName" name="entryName" required>
 
-        <label for="entryValue">Entry Value:</label>
-        <input type="number" id="entryValue" name="entryValue" required step="any">
+        <label for="entryFavourableOutcome">Favourable Outcome:</label>
+        <input type="number" id="entryFavourableOutcome" name="entryFavourableOutcome" step="1" required min="1">
+        
+        <label for="entryTotalOutcomes">Total Outcome:</label>
+        <input type="number" id="entryTotalOutcomes" name="entryTotalOutcomes" step="1" required min="1">
+        
         <button type="submit">Add Entry</button>
     </form>
 
