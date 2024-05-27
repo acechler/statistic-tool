@@ -5,5 +5,5 @@ This is an exercise on creating an application that calculates the probability o
 
 ## How to run with npm
 ```bash
-node index.js
+node server.js
 ```
