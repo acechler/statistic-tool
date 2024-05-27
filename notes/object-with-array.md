@@ -1,3 +1,8 @@
+# Object with Array
+
+This is how you use an object with an array
+
+```js
 
 const probability_bag = {
     
@@ -29,3 +34,5 @@ probability_bag.items.push(chance_on_counter);
 probability_bag.items.push(chance_on_rolling_6);
 
 console.log(probability_bag.calc());
+
+```
