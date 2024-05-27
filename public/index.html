@@ -13,24 +13,23 @@
 
     <p>Welcome to the Statistic Tool</p>
 
-
-    <form action="addEntryForm">
+    <h2>Add Entry</h2>
+    <form action="addEntryForm" id="addEntryForm">
         <label for="entryName">Entry Name:</label>
         <input type="text" id="entryName" name="entryName" required>
-
-        <label for="entryFavourableOutcome">Favourable Outcome:</label>
-        <input type="number" id="entryFavourableOutcome" name="entryFavourableOutcome" step="1" required min="1">
-        
-        <label for="entryTotalOutcomes">Total Outcome:</label>
-        <input type="number" id="entryTotalOutcomes" name="entryTotalOutcomes" step="1" required min="1">
-        
+        <label for="entryValue">Entry Value:</label>
+        <input type="number" id="entryValue" name="entryValue" required step="any">
         <button type="submit">Add Entry</button>
     </form>
 
+
     <h2>Probability Bag</h2>
+    <pre id="probabilityBag"></pre>
+
+    <h2>Product</h2>
     <button id="calculateProduct">Calculate Product</button>
     <p id="productResult"></p>
 
-    <script src="/public/js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
