@@ -1,4 +1,3 @@
-// script.js
 document.getElementById('addEntryForm').addEventListener('submit', async (event) => {
     event.preventDefault();
     const entryName = document.getElementById('entryName').value;
@@ -20,44 +19,34 @@ document.getElementById('calculateProduct').addEventListener('click', async () =
     document.getElementById('productResult').innerText = `Product: ${result.product}`;
 });
 
-
-///TODO: Figure out how to extract the data from `items`
+// Corrected updateProbabilityBag function
 function updateProbabilityBag(items) {
-    
     const tbody = document.getElementById('statusSetTBody');
-    const newTR = document.createElement('tr');
-    
-    const bag = document.getElementById('probabilityBag');
-    bag.innerText = JSON.stringify(items, null, 2);
-    const parsedItems = JSON.parse(bag.innerText);
-    
-    parsedItems.forEach(item => {
+    tbody.innerHTML = ''; // Clear existing rows
+
+    items.forEach(item => {
+        const newTR = document.createElement('tr');
         const newTH = document.createElement('th');
         const newTD = document.createElement('td');
-        newTH.setAttribute("scope","row");
-        
-        newTH.innerHTML = `${item.name}`;
-        newTD.innerHTML = `${item.value}`;
+
+        newTH.setAttribute("scope", "row");
+        newTH.innerText = item.name;
+        newTD.innerText = item.value;
 
         newTR.appendChild(newTH);
         newTR.appendChild(newTD);
+        tbody.appendChild(newTR);
     });
 
-    tbody.appendChild(newTR);
-    
-    /*             
-    <tr>
-        <th scope="row"></th>
-        <td id="name">0</td>
-    </tr> 
-    */
+    const bag = document.getElementById('probabilityBag');
+    bag.innerText = JSON.stringify(items, null, 2);
 }
 
 // Fetch and display the initial probability bag
 async function fetchProbabilityBag() {
     const response = await fetch('/calculate'); // This can be any endpoint that returns the items
     const result = await response.json();
-    updateProbabilityBag(result.items || {});
+    updateProbabilityBag(result.items || []);
 }
 
 fetchProbabilityBag();

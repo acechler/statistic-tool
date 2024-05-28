@@ -1,23 +1,16 @@
-
 const probability_bag = {
-    
-    name : "probability bag",
-    items : {},
+    name: "probability bag",
+    items: [],
     addEntry(name, value) {
-        this.items[name] = value;
+        this.items.push({ name, value });
     },
-    calc(){
+    calc() {
         let product = 1;
-        for(let key in this.items){
-            if(this.items.hasOwnProperty(key) && typeof this.items[key] === 'number'){
-                product *= this.items[key];
-            }
-        }
+        this.items.forEach((item) => {
+            product *= item.value;
+        });
         return product;
     }
-
 };
 
-
 module.exports = probability_bag;
-

@@ -4,9 +4,6 @@ const probability_bag = require('./probability_bag'); // Import the probability_
 
 const app = express();
 
-// status(200) === successful http request
-// status(400) === bad http request
-
 app.use(express.json()); // Middleware to parse JSON bodies
 
 // Serve static files from the 'public' folder

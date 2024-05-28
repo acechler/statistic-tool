@@ -8,13 +8,12 @@
 </head>
 <body>
 
-
     <h1>Statistic Tool</h1>
 
     <p>Welcome to the Statistic Tool</p>
 
     <h2>Add Entry</h2>
-    <form action="addEntryForm" id="addEntryForm">
+    <form id="addEntryForm">
         <label for="entryName">Entry Name:</label>
         <input type="text" id="entryName" name="entryName" required>
         <label for="entryValue">Entry Value:</label>
@@ -22,10 +21,8 @@
         <button type="submit">Add Entry</button>
     </form>
 
-
     <h2>Probability Bag</h2>
     <pre id="probabilityBag"></pre>
-
 
     <section class="stats-section">
         <h2>Statistics</h2>
@@ -36,20 +33,9 @@
               <th scope="col">Probability</th>
             </tr>
           </thead>
-          <tbody id="statusSetTBody">
-            <tr>
-              <th scope="row">event</th>
-              <td id="name">0</td>
-            </tr>
-            <tr>
-              <th scope="row">event</th>
-              <td id="probability">0</td>
-            </tr>
-
-          </tbody>
+          <tbody id="statusSetTBody"></tbody>
         </table>
       </section>
-
 
     <h2>Product</h2>
     <button id="calculateProduct">Calculate Product</button>
